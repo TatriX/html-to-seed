@@ -1,0 +1,1 @@
+ul![class!["nav" "navbar-nav" "pull-xs-right"], li![class!["nav-item"], a![class!["nav-link" "active"], attrs![At::Href => ""], "Home",]], li![class!["nav-item"], a![class!["nav-link" "active"], attrs![At::Href => ""], i![class!["ion-compose"]], "&nbsp;New Post"]]]
