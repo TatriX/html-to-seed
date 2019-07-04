@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML to Seed</title>
+        <style>
+         textarea {
+             width: 45vw;
+             height: 50vh;
+         }
+        </style>
+    </head>
+    <body>
+        <div>
+            <textarea id="html"><p>Paste your HTML here</p></textarea>
+            <textarea id="seed" readonly></textarea>
+        </div>
+        <button id="convert">Convert!</button>
+        <p>This is very alpha. Please put your feedback <a href="https://github.com/TatriX/html-to-seed/issues">here</a>.</p>
+        <script>
+         document.getElementById("convert").onclick = async () => {
+             const body = document.getElementById("html").value;
+             const seed = await fetch("./convert", {method: "POST", body}).then(res => res.text());
+             document.getElementById("seed").value = seed;
+         };
+        </script>
+    </body>
+</html>
