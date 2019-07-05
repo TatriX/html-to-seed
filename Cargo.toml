@@ -1,4 +1,7 @@
+cargo-features = ["default-run"]
+
 [package]
+default-run = "html_to_seed"
 name = "html_to_seed"
 version = "0.1.0"
 authors = ["TatriX <tatrics@gmail.com>"]

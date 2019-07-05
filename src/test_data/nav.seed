@@ -1,0 +1,44 @@
+nav![
+    class!["navbar", "navbar-light"],
+    div![
+        class!["container"],
+        a![
+            class!["navbar-brand"],
+            attrs! {At::Href => "index.html"},
+            "conduit"
+        ],
+        ul![
+            class!["nav", "navbar-nav", "pull-xs-right"],
+            li![
+                class!["nav-item"],
+                a![
+                    class!["nav-link", "active"],
+                    attrs! {At::Href => ""},
+                    "Home"
+                ]
+            ],
+            li![
+                class!["nav-item"],
+                a![
+                    class!["nav-link"],
+                    attrs! {At::Href => ""},
+                    i![class!["ion-compose"]],
+                    "New Post"
+                ]
+            ],
+            li![
+                class!["nav-item"],
+                a![
+                    class!["nav-link"],
+                    attrs! {At::Href => ""},
+                    i![class!["ion-gear-a"]],
+                    "Settings"
+                ]
+            ],
+            li![
+                class!["nav-item"],
+                a![class!["nav-link"], attrs! {At::Href => ""}, "Sign up"]
+            ]
+        ]
+    ]
+];

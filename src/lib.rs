@@ -1,7 +1,5 @@
 //! html-to-seed: convert HTML to seed macros.
 //!
-//!
-//!
 //! TODO: check &nbsp;
 
 #[macro_use]
@@ -149,16 +147,13 @@ pub fn format(input: String) -> String {
     let (mut config, _) =
         load_config::<NullOptions>(Some(Path::new(".")), None).unwrap();
 
-    let mut out = vec![];
     config.set().verbose(Verbosity::Quiet);
     config.set().emit_mode(EmitMode::Stdout);
-    {
-        let mut session = Session::new(config, Some(&mut out));
 
-        session
-            .format(Input::Text(format!("{};", input).into()))
-            .unwrap();
-    }
+    let mut out = vec![];
+    Session::new(config, Some(&mut out))
+        .format(Input::Text(format!("{};", input).into()))
+        .unwrap();
 
     String::from_utf8(out).unwrap()
 }
@@ -190,6 +185,9 @@ mod tests {
 
     #[test]
     fn test_ul() {
-        format(convert(include_str!("test_data/nav.html")));
+        assert_eq!(
+            format(convert(include_str!("test_data/nav.html"))),
+            include_str!("test_data/nav.seed"),
+        );
     }
 }
